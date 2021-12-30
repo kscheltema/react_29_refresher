@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MainNav() {
   return (
     <header>
@@ -5,7 +7,7 @@ function MainNav() {
       <nav>
         <ul>
           <li>
-            <a href="">Some Link</a>
+            <Link href="">Some Link</Link>
           </li>
         </ul>
       </nav>
