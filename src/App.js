@@ -1,5 +1,18 @@
+import { Route, Routes } from "react-router-dom";
+import AllMeetupsPage from "./pages/AllMeetups";
+import FavPage from "./pages/Fav";
+import NewMeetupsPage from "./pages/NewMeetups";
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Routes>
+        <Route path="/" exact element={<AllMeetupsPage />} />
+        <Route path="/new-meetup" element={<NewMeetupsPage />} />
+        <Route path="/favorite" element={<FavPage />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
