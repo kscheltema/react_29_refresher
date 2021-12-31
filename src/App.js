@@ -10,6 +10,7 @@ function App() {
       <MainNav />
       <Routes>
         <Route path="/" exact element={<AllMeetupsPage />} />
+        <Route path="/all-meetups" element={<AllMeetupsPage />} />
         <Route path="/new-meetup" element={<NewMeetupsPage />} />
         <Route path="/favorite" element={<FavPage />} />
       </Routes>
