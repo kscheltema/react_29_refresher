@@ -2,7 +2,15 @@ import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 function NewMeetupsPage() {
   function addMeetupHandler(meetupData) {
-    //send a http request here
+    fetch(
+      //fetch default a get request
+      "https://refresher-29-default-rtdb.europe-west1.firebasedatabase.app/meetups.json",
+      {
+        method: "POST",
+        body: JSON.stringify(meetupData),
+        headers: { "Content-Type": "application/json" },
+      } //this changes the default method to the quote method
+    );
   }
 
   return (
