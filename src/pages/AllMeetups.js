@@ -6,6 +6,7 @@ function AllMeetupsPage() {
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(
       "https://refresher-29-default-rtdb.europe-west1.firebasedatabase.app/meetups.json"
     )
@@ -13,8 +14,17 @@ function AllMeetupsPage() {
         return response.json();
       })
       .then((data) => {
+        const meetups = [];
+
+        for (const key in data) {
+          const meetup = {
+            id: key,
+            ...data[key],
+          };
+          meetups.push(meetup);
+        }
         setIsLoading(false);
-        setLoadedMeetups(data);
+        setLoadedMeetups(meetups);
       });
   }, []); //the dependencies prevents a loop - no external dependencies
 
